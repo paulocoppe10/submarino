@@ -48,21 +48,27 @@ void loop() {
   delay(15);     
   
   Serial.println(analogRead(pothelice));
-  if (analogRead(pothelice) > 511) {
+  if (analogRead(pothelice) > 600) {
     digitalWrite(6, HIGH);
     digitalWrite(7, LOW);
+  }else{
+    digitalWrite(6, HIGH);
+    digitalWrite(7, HIGH);
   }
-  if (analogRead(pothelice) < 511) {
+  if (analogRead(pothelice) < 400) {
     digitalWrite(6, LOW);
     digitalWrite(7, HIGH);
   }
   
   Serial.println(analogRead(pottanques));
-  if (analogRead(pottanques) > 511) {
+  if (analogRead(pottanques) > 600) {
     digitalWrite(12, HIGH);
     digitalWrite(13, LOW);
+  }else{
+    digitalWrite(12, HIGH);
+    digitalWrite(13, HIGH);
   }
-  if (analogRead(pottanques) < 511) {
+  if (analogRead(pottanques) < 400) {
     digitalWrite(12, LOW);
     digitalWrite(13, HIGH);
   }
